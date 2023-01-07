@@ -10,7 +10,7 @@ const productRouter = require('./routes/product');
 const userRouter = require('./routes/user');
 
 //INIT(Initialization)
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 const app = express();
 const DB ="mongodb+srv://kunal:kunal123@cluster0.iwojesb.mongodb.net/?retryWrites=true&w=majority";
 
@@ -35,6 +35,6 @@ mongoose
 });
 
 
-app.listen(PORT , "0.0.0.0" , () => {
+app.listen(PORT , () => {
     console.log(`Connected at port  ${PORT} hello `);
 });
